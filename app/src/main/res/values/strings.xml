@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Popular Movies</string>
+
+    <string name="action_popular">Most popular</string>
+    <string name="action_top_rated">Top rated</string>
+    <string name="action_favorites">Favorites</string>
+
+    <string name="header_main_toolbar">Pop Movies</string>
+    <string name="header_movie_detail_toolbar">MovieDetail</string>
+
+    <string name="trailers">Trailers:</string>
+    <string name="no_trailers">There are no trailers about this movie.</string>
+    <string name="trailer_one">Trailer 1</string>
+    <string name="trailer_two">Trailer 2</string>
+
+    <string name="reviews">Reviews:</string>
+    <string name="no_reviews">There are no reviews about this movie.</string>
+
+    <string name="share_trailer">Share trailer</string>
+    <string name="movie_poster">Movie poster</string>
+    <string name="loading_error">An error has occurred, please try again later!</string>
+    <string name="try_again">Try again</string>
+    <string name="open_with">Play video with:</string>
+    <string name="no_favorites">No favorite movies found.</string>
+    <string name="share_trailer_title">Share trailer with</string>
+</resources>

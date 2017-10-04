@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_movie_details"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.popularmovies.MovieDetailsActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_movie_title"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/title_height"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/title_text_size"
+            android:background="@color/colorGreen"
+            android:padding="@dimen/title_padding"
+            android:layout_marginBottom="@dimen/title_margin_bottom"
+            android:gravity="center_vertical"
+            android:elevation="@dimen/elevation"
+            tools:text="The title"/>
+
+        <ImageView
+            android:id="@+id/iv_movie_poster"
+            android:layout_width="@dimen/image_width"
+            android:layout_height="@dimen/image_height"
+            android:layout_below="@id/tv_movie_title"
+            android:layout_marginLeft="@dimen/image_margin_side"
+            android:layout_marginStart="@dimen/image_margin_side"
+            android:layout_marginRight="@dimen/image_margin_side"
+            android:layout_marginEnd="@dimen/image_margin_side"
+            android:contentDescription="@string/movie_poster"
+            android:adjustViewBounds="true"
+            tools:src="@mipmap/ic_launcher"/>
+
+        <TextView
+            android:id="@+id/tv_movie_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/iv_movie_poster"
+            android:layout_toEndOf="@id/iv_movie_poster"
+            android:layout_below="@id/tv_movie_title"
+            android:textStyle="bold"
+            android:textColor="@color/colorGray"
+            android:textSize="@dimen/date_text_size"
+            tools:text="1992"/>
+
+        <TextView
+            android:id="@+id/tv_movie_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/iv_movie_poster"
+            android:layout_toEndOf="@id/iv_movie_poster"
+            android:layout_below="@id/tv_movie_date"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/rating_text_size"
+            tools:text="10/10"/>
+
+        <Button
+            android:id="@+id/bt_favorite"
+            android:layout_width="@dimen/favorite_button_size"
+            android:layout_height="@dimen/favorite_button_size"
+            android:layout_toRightOf="@id/iv_movie_poster"
+            android:layout_toEndOf="@id/iv_movie_poster"
+            android:layout_below="@id/tv_movie_rating"
+            android:background="@android:drawable/btn_star_big_off"
+            android:onClick="markAsFavorite"/>
+
+        <TextView
+            android:id="@+id/tv_movie_plot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_movie_poster"
+            android:textColor="@color/colorGray"
+            android:textSize="@dimen/plot_text_size"
+            android:padding="@dimen/side_padding"
+            tools:text="Delta dawn what's this flower you have on, could it be a faded rose from days gone by..."/>
+
+        <View
+            android:id="@+id/line1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:layout_margin="@dimen/side_padding"
+            android:background="@color/colorLightGray"
+            android:layout_below="@id/tv_movie_plot"/>
+
+        <!-- Trailers section -->
+        <TextView
+            android:id="@+id/tv_trailers_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/line1"
+            android:textColor="@android:color/darker_gray"
+            android:text="@string/trailers"
+            android:textSize="@dimen/title_text_size"
+            android:padding="@dimen/side_padding" />
+
+        <TextView
+            android:id="@+id/tv_trailers_error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_trailers_title"
+            android:textColor="@color/colorGray"
+            android:text="@string/no_trailers"
+            android:textSize="@dimen/plot_text_size"
+            android:padding="@dimen/side_padding" />
+
+        <Button
+            android:id="@+id/bt_play_trailer1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_trailers_error"
+            android:text="@string/trailer_one"
+            android:background="@android:color/white"
+            android:layout_margin="@dimen/side_padding"
+            android:drawableStart="@drawable/ic_music_player_play"
+            android:drawableLeft="@drawable/ic_music_player_play"
+            android:onClick="showTrailerOne"
+            android:visibility="gone"/>
+
+        <View
+            android:id="@+id/line2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:layout_margin="@dimen/side_padding"
+            android:background="@color/colorLightGray"
+            android:layout_below="@id/bt_play_trailer1"
+            android:visibility="gone"/>
+
+        <Button
+            android:id="@+id/bt_play_trailer2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/line2"
+            android:text="@string/trailer_two"
+            android:background="@android:color/background_light"
+            android:layout_margin="@dimen/side_padding"
+            android:drawablePadding="5dp"
+            android:drawableStart="@drawable/ic_music_player_play"
+            android:drawableLeft="@drawable/ic_music_player_play"
+            android:onClick="showTrailerTwo"
+            android:visibility="gone"/>
+
+        <View
+            android:id="@+id/line3"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:layout_margin="@dimen/side_padding"
+            android:background="@color/colorLightGray"
+            android:layout_below="@id/bt_play_trailer2"/>
+
+        <!-- Reviews section -->
+        <TextView
+            android:id="@+id/tv_reviews_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/line3"
+            android:textColor="@android:color/darker_gray"
+            android:text="@string/reviews"
+            android:textSize="@dimen/title_text_size"
+            android:padding="@dimen/side_padding" />
+
+        <TextView
+            android:id="@+id/tv_reviews"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_reviews_title"
+            android:textColor="@color/colorGray"
+            android:textSize="@dimen/plot_text_size"
+            android:padding="@dimen/side_padding"
+            tools:text="Reviews dummy data..."/>
+    </RelativeLayout>
+</ScrollView>
